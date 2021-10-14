@@ -1,4 +1,4 @@
-## This is a development repository that is eventually planned to replace the official repository.
+## This is an old branch that will be archived. Do not merge.
 
 # T-Stick Digital Musical Instrument (DMI)
 
