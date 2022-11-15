@@ -13,15 +13,15 @@
 unsigned int firmware_version = 220929;
 
 // set the amount of capacitive stripes for the sopranino (15) or soprano (30)
-#define TSTICK_SIZE 16;
+#define TSTICK_SIZE 30;
 
 /*
   Choose the capacitive sensing board
   - Trill
   - IDMIL Capsense board 
 */
-//#define touch_TRILL
-#define touch_CAPSENSE
+#define touch_TRILL
+//#define touch_CAPSENSE
 
 
 #include "Arduino.h"
@@ -496,9 +496,12 @@ void loop() {
 
             oscNamespace.replace(oscNamespace.begin()+baseNamespace.size(),oscNamespace.end(), "raw/capsense");
             #ifdef touch_TRILL
-                lo_send(osc1, oscNamespace.c_str(), "iiiiiiiiiiiiiii", touch.touch[0], touch.touch[1],touch.touch[2],
+                lo_send(osc1, oscNamespace.c_str(), "iiiiiiiiiiiiiiiiiiiiiiiiiiiiii", touch.touch[0], touch.touch[1],touch.touch[2],
                     touch.touch[3],touch.touch[4],touch.touch[5], touch.touch[6], touch.touch[7], touch.touch[8],
-                    touch.touch[9], touch.touch[10], touch.touch[11], touch.touch[12], touch.touch[13], touch.touch[14]
+                    touch.touch[9], touch.touch[10], touch.touch[11], touch.touch[12], touch.touch[13], touch.touch[14],
+                    touch.touch[15], touch.touch[16], touch.touch[17], touch.touch[18], touch.touch[19], touch.touch[20],
+                    touch.touch[21], touch.touch[22], touch.touch[23], touch.touch[24], touch.touch[25], touch.touch[26],
+                    touch.touch[27], touch.touch[28], touch.touch[29]
             );
             #endif
             #ifdef touch_CAPSENSE
@@ -532,9 +535,12 @@ void loop() {
     if (puara.IP2_ready()) {
             oscNamespace.replace(oscNamespace.begin()+baseNamespace.size(),oscNamespace.end(), "raw/capsense");
             #ifdef touch_TRILL
-                lo_send(osc2, oscNamespace.c_str(), "iiiiiiiiiiiiiii", touch.touch[0], touch.touch[1],touch.touch[2],
+                lo_send(osc2, oscNamespace.c_str(), "iiiiiiiiiiiiiiiiiiiiiiiiiiiiii", touch.touch[0], touch.touch[1],touch.touch[2],
                     touch.touch[3],touch.touch[4],touch.touch[5], touch.touch[6], touch.touch[7], touch.touch[8],
-                    touch.touch[9], touch.touch[10], touch.touch[11], touch.touch[12], touch.touch[13], touch.touch[14]
+                    touch.touch[9], touch.touch[10], touch.touch[11], touch.touch[12], touch.touch[13], touch.touch[14],
+                    touch.touch[15], touch.touch[16], touch.touch[17], touch.touch[18], touch.touch[19], touch.touch[20],
+                    touch.touch[21], touch.touch[22], touch.touch[23], touch.touch[24], touch.touch[25], touch.touch[26],
+                    touch.touch[27], touch.touch[28], touch.touch[29]
             );
             #endif
             #ifdef touch_CAPSENSE
